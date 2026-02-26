@@ -16,7 +16,7 @@ Update content in these files:
 
 ## Publish on GitHub
 
-1. Create a GitHub repository (for example: `personal-website`).
+1. Create a GitHub repository (for example: `YuduanPu.github.io`).
 2. Push this folder to that repository:
 
 ```bash
@@ -37,6 +37,10 @@ Your site will be available at:
 
 - `https://<your-github-username>.github.io/<repo-name>/`
 
-If you name the repository `<your-github-username>.github.io`, then it will be:
+For a clean root URL, use a repository named exactly:
+
+- `<your-github-username>.github.io`
+
+Then your site URL is:
 
 - `https://<your-github-username>.github.io/`
