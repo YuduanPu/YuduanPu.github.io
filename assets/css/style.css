@@ -1,10 +1,11 @@
 :root {
-  --bg: #f7f5ef;
-  --text: #1f1f1f;
-  --muted: #575757;
-  --accent: #0f4c5c;
-  --card: #ffffff;
-  --border: #ddd5c7;
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #102a43;
+  --muted: #486581;
+  --primary: #0b5d78;
+  --primary-soft: #d9edf3;
+  --line: #d9e2ec;
 }
 
 * {
@@ -13,10 +14,12 @@
 
 body {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
   color: var(--text);
-  background: radial-gradient(circle at 20% 10%, #fffaf0 0%, var(--bg) 45%);
+  font-family: "Charter", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   line-height: 1.65;
+  background:
+    radial-gradient(1200px 500px at 100% -5%, #e6f3f8 0%, rgba(230, 243, 248, 0) 55%),
+    linear-gradient(180deg, #f8fbfd 0%, var(--bg) 45%);
 }
 
 .container {
@@ -24,18 +27,12 @@ body {
   margin: 0 auto;
 }
 
-.site-header,
-.site-footer {
-  border-bottom: 1px solid var(--border);
-  background: #fffcf5;
-}
-
-.site-footer {
-  border-top: 1px solid var(--border);
-  border-bottom: 0;
-  margin-top: 3rem;
-  color: var(--muted);
-  font-size: 0.95rem;
+.site-header {
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
 }
 
 .nav-wrap {
@@ -43,47 +40,128 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 0;
   flex-wrap: wrap;
+  padding: 0.95rem 0;
 }
 
 .brand {
   text-decoration: none;
   color: var(--text);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 nav a {
-  color: var(--accent);
   text-decoration: none;
+  color: var(--primary);
   margin-left: 1rem;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
+  font-weight: 600;
 }
 
 main {
-  padding: 2rem 0;
+  padding: 2rem 0 1.5rem;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 1.7rem;
+  grid-template-columns: 250px 1fr;
+  gap: 1.8rem;
   align-items: start;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
 }
 
-.hero img {
+.hero-photo {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.75rem;
+  box-shadow: 0 8px 24px rgba(16, 42, 67, 0.08);
+}
+
+.hero-photo img {
   width: 100%;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  display: block;
+  border-radius: 10px;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1rem 1.1rem;
+.hero-text h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0 0 0.6rem;
+}
+
+.hero-text p {
+  margin-top: 0;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.quick-links a {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--primary);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+}
+
+.section-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  margin: 0.9rem 0;
+  box-shadow: 0 6px 20px rgba(16, 42, 67, 0.05);
+}
+
+.section-card h2,
+.section-card h3 {
+  margin-top: 0.2rem;
+}
+
+.entry {
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.9rem;
+}
+
+.entry:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: #f8fbfd;
+  margin-top: 1.5rem;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: 1rem 0;
 }
 
 h1,
@@ -93,30 +171,15 @@ h3 {
 }
 
 a {
-  color: var(--accent);
+  color: var(--primary);
 }
 
-ul {
-  padding-left: 1.15rem;
-}
-
-.entry {
-  margin-bottom: 1.1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px dashed var(--border);
-}
-
-.entry:last-child {
-  border-bottom: 0;
-}
-
-.meta {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-@media (max-width: 760px) {
+@media (max-width: 840px) {
   .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
     grid-template-columns: 1fr;
   }
 

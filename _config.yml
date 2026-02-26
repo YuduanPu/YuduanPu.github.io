@@ -1,6 +1,6 @@
 title: Yuduan Pu
 description: PhD Student in Economics at Simon Fraser University
-baseurl: ""
-url: ""
+baseurl: "/Yuduan_website"
+url: "https://goldencommon.github.io"
 markdown: kramdown
 permalink: pretty
